@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  width: 522px;
+  gap: 12px;
+}
+
+.visualBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 48px;
+  width: 944px;
+  column-gap: 16px;
+  row-gap: 48px;
+}
+

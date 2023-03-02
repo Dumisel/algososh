@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  width: 980px;
+}
+
+.radioButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 52px 0 0;
+  width: 221px;
+}
+
+.sortingButtons {
+  display: flex;
+  gap: 12px;
+  padding: 0 80px 0 0;
+}
+
+.button {
+  width: 205px;
+}
+
+.visualBlock {
+  display: flex;
+  align-items: flex-end;
+  padding: 48px 0 0;
+  height: 368px;
+}
+
+.element {
+  padding: 0 10px 0 0;
+}

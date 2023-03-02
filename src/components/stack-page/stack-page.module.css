@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  width: 829px;
+  gap: 12px;
+  margin: 0 0 52px
+}
+
+.visualBlock {
+  display: flex;
+  gap: 16px;
+}
