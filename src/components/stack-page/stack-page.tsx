@@ -5,7 +5,6 @@ import { IStackItem, Stack } from "./Stack";
 import { Input } from "../ui/input/input";
 import { Button } from "../ui/button/button";
 import { Circle } from "../ui/circle/circle";
-
 import styles from "./stack-page.module.css";
 
 const stack = new Stack<IStackItem>();

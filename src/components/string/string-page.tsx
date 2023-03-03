@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
-import { String } from "./String";
+import { ReversedString } from "./String";
 import { ElementStates } from "../../types/element-states";
 import { Input } from "../ui/input/input";
 import { Button } from "../ui/button/button";
@@ -12,7 +12,7 @@ export interface IStringItem {
   state: ElementStates;
 }
 
-const string = new String<IStringItem>();
+const reversedString = new ReversedString<IStringItem>();
 
 export const StringComponent: React.FC = () => {
   const [value, setValue] = useState("");
@@ -26,9 +26,9 @@ export const StringComponent: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    string.setArray(value.split(""));
-    setLetters([...string.container]);
-    if (string.container.length === 1) {
+    reversedString.setArray(value.split(""));
+    setLetters([...reversedString.container]);
+    if (reversedString.container.length === 1) {
       return;
     }
 
@@ -36,16 +36,16 @@ export const StringComponent: React.FC = () => {
 
     let counter = 0;
     const interval = setInterval(() => {
-      string.swap(counter);
-      setLetters([...string.container]);
+      reversedString.swap(counter);
+      setLetters([...reversedString.container]);
 
       counter++;
 
-      if (string.reverse(counter)) {
+      if (reversedString.reverse(counter)) {
         clearInterval(interval);
         setTimeout(() => {
-          string.setModified();
-          setLetters([...string.container]);
+          reversedString.setModified();
+          setLetters([...reversedString.container]);
           setIsLoading(false);
         }, 1000);
       }

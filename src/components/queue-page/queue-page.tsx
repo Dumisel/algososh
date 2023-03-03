@@ -15,6 +15,7 @@ export interface IQueue {
 }
 
 const queue = new Queue<IQueue>(7);
+
 export const QueuePage: React.FC = () => {
   const [value, setValue] = useState("");
   const [letters, setLetters] = useState<IQueue[]>([]);

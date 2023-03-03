@@ -1,6 +1,6 @@
 import { ElementStates } from "../../types/element-states";
 
-export class String<T> {
+export class ReversedString<T> {
 
   container: T[] | any = [];
   counter: number = 0;

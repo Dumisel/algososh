@@ -4,8 +4,6 @@ import { Button } from "../ui/button/button";
 import { Circle } from "../ui/circle/circle";
 import { Input } from "../ui/input/input";
 import styles from "./fibonacci-page.module.css";
-import { networkInterfaces } from "os";
-import { isArrayLiteralExpression } from "typescript";
 
 export const FibonacciPage: React.FC = () => {
   const [value, setValue] = useState("");
