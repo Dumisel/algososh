@@ -1,57 +1,103 @@
+import React, { useCallback, useState } from "react";
+import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import { ElementStates } from "../../types/element-states";
+import { Input } from "../ui/input/input";
+import { Button } from "../ui/button/button";
+import { Circle } from "../ui/circle/circle";
+import styles from "./string.module.css";
 
-export class ReversedString<T> {
+export interface IString {
+  letter: string;
+  state?: ElementStates;
+}
 
-  container: T[] | any = [];
-  counter: number = 0;
+const delay = (
+  time: number
+) => new Promise(resolve => setTimeout(resolve, time));
 
-  reverse = (counter: number): boolean => {
-    return (
-      this.container.length === 1 
-      || counter === this.container.length - counter 
-      || counter === this.container.length - counter - 1
-    );
-  }
+export const StringComponent: React.FC = () => {
+  const [value, setValue] = useState("");
+  const [letters, setLetters] = useState<IString[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  swap = (counter: number): void => {
-    let temp: string = this.container[counter].item;
-    this.container[counter].item = this.container[this.container.length - 1 - counter].item;
-
-    this.container[counter].state = ElementStates.Changing;
-
-    if (this.container[counter - 1]?.state) {
-      this.container[counter - 1].state = ElementStates.Modified;
-    }
-
-    this.container[this.container.length - 1 - counter].item = temp;
-
-    this.container[this.container.length - 1 - counter].state = ElementStates.Changing;
-
-    if (this.container[this.container.length - 1 - counter + 1]?.state) {
-      this.container[this.container.length - 1 - counter + 1].state = ElementStates.Modified;
-    }
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
   };
 
-  setModified = (): void => {
-    this.container = this.container.map((element: T) => {
-      return {
-        ...element,
-        state: ElementStates.Modified,
-      };
-    });
-  }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    reverseString();
+  };
 
-  setArray = (letters: string[]): void => {
-    this.container = letters.map(
-      (element: string, i: number, array) => {
-        return {
-          item: element,
-          state:
-            i === 0 || i === array.length - 1
-              ? ElementStates.Changing
-              : ElementStates.Default,
-        };
+  const reverseString = useCallback(async() => {
+    const values = value.split('').map(item => {
+      return {
+        letter: item,
+        state: ElementStates.Default
       }
-    );
-  }
-}
+    })
+    
+    setLetters(values)
+    let array = [ ...values ]
+    
+    for (let i = 0; i < array.length/2; i++) {
+      setTimeout(() => {
+        let start = i;
+        let end = array.length - 1 - start;
+        array[start].state = ElementStates.Changing;
+        array[end].state = ElementStates.Changing;
+        setLetters([ ...array ]);
+
+        setTimeout(() => {
+          let swaped = array[start].letter;
+          array[start] = {
+            letter: array[end].letter,
+            state: ElementStates.Modified,
+          };
+          array[end] = {
+            letter: swaped,
+            state: ElementStates.Modified,
+          }
+          setLetters([ ...array ]);
+          setValue('');
+        }, 1000);
+      }, 1000 * i);
+    }
+    await delay(1000 * array.length/2);
+    setIsLoading(false);
+  }, [value])
+
+  return (
+    <SolutionLayout title = "Строка">
+     <div className = { styles.wrapper }>
+        <form className = { styles.options } onSubmit = { handleSubmit }>
+          <Input
+            maxLength = { 11 }
+            isLimitText = { true }
+            onChange = { handleInput }
+            value = { value.replace(/\D/g, "") }
+          />
+          <Button
+            text = "Развернуть"
+            type = "submit"
+            isLoader = { isLoading}
+            disabled = { value.length < 2 }
+            extraClass = { styles.button }
+          />
+        </form>
+        <div className = { styles.visualBlock }>
+          {letters.map((letter, i) => {
+            return (
+              <Circle
+                letter = { letter.letter }
+                key = { i }
+                state = { letter.state }
+              />
+            );
+          })}
+        </div>
+      </div>
+    </SolutionLayout>
+  );
+};

@@ -27,7 +27,7 @@ export const FibonacciPage: React.FC = () => {
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
-    if (parseInt(e.target.value) <= 19) {
+    if (( parseInt(e.target.value) <= 19) && (parseInt(e.target.value) >= 1)) {
       setIsDisabled(false);
     } else {
       setIsDisabled(true);
@@ -43,6 +43,9 @@ export const FibonacciPage: React.FC = () => {
     const array: string[] = [];
     let counter: number = 0;
     const fibonacciArray = getFibonacciNumbers(number);
+
+    setValue("");
+    setIsDisabled(true);
 
     const interval = setInterval(() => {
       array.push(fibonacciArray[counter]);
@@ -63,9 +66,10 @@ export const FibonacciPage: React.FC = () => {
         <form className = { styles.options } onSubmit = { handleSubmit }>
           <Input
             max = { 19 }
+            maxLength = { 19 }
             type = "number"
             isLimitText = { true } 
-            value = { value.replace(/\D/g, "") }
+            value = { value.replace(/\D/g, "") || "" }
             onInput = { handleInput }
           />
           <Button

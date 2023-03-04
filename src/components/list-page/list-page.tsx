@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import { ElementStates } from "../../types/element-states";
 import { Button } from "../ui/button/button";
 import { Circle } from "../ui/circle/circle";
 import { Input } from "../ui/input/input";
-import { LinkedList, Node } from "./LinkedList";
+import { LinkedList} from "./LinkedList";
 import { ArrowIcon } from "../ui/icons/arrow-icon";
 import styles from "./list-page.module.css";
 
 const initialArray = ["1", "8", "34", "0"]
-
-const linkedList = new LinkedList<Node>(initialArray);
+const linkedList = new LinkedList<string>(initialArray);
 
 export const ListPage: React.FC = () => {
   const [value, setValue] = useState("");
   const [indexValue, setIndexValue] = useState("");
-  const [letters, setLetters] = useState<string[]>([]);
+  const [letters, setLetters] = useState<string[]>(linkedList.array);
   const [topCircleIndex, setTopCircleIndex] = useState(-1);
   const [topCircleLetter, setTopCircleLetter] = useState("");
   const [bottomCircleIndex, setBottomCircleIndex] = useState(-1);
@@ -39,10 +38,6 @@ export const ListPage: React.FC = () => {
     removeByIndex: false,
   });
 
-  useEffect(() => {
-    setLetters(linkedList.array);
-  }, []);
-
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
@@ -53,32 +48,32 @@ export const ListPage: React.FC = () => {
 
   const handleAddToHead = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    setIsLoading((prevState) => ({ ...prevState, addInHead: true }));
+    setIsLoading((prevState) => ({ ...prevState, addToHead: true }));
     setIsDisabled((prevstate) => ({
       ...prevstate,
-      deleteFromHead: true,
-      deleteFromTail: true,
+      removeFromHead: true,
+      removeFromTail: true,
     }));
+    if (!value) return null;
     
+    linkedList.prepend(value);
     setTopCircleIndex(0);
     setTopCircleLetter(value);
-    linkedList.prepend(value);
     setValue("");
 
     setTimeout(() => {
       setLetters(linkedList.array);
       setTopCircleIndex(-1);
       setTopCircleLetter("");
-
       setModifiedIndexes([0]);
 
       setTimeout(() => {
         setModifiedIndexes([]);
-        setIsLoading((prevState) => ({ ...prevState, addInHead: false }));
+        setIsLoading((prevState) => ({ ...prevState, addToHead: false }));
         setIsDisabled((prevstate) => ({
           ...prevstate,
-          deleteFromHead: false,
-          deleteFromTail: false,
+          removeFromHead: false,
+          removeFromTail: false,
         }));
       }, 500);
     }, 500);
@@ -89,9 +84,10 @@ export const ListPage: React.FC = () => {
     setIsLoading((prevState) => ({ ...prevState, addInTail: true }));
     setIsDisabled((prevstate) => ({
       ...prevstate,
-      deleteFromHead: true,
-      deleteFromTail: true,
+      removeFromHead: true,
+      removeFromTail: true,
     }));
+    if (!value) return null;
     
     setTopCircleIndex(linkedList.array.length - 1);
     setTopCircleLetter(value);
@@ -110,8 +106,8 @@ export const ListPage: React.FC = () => {
         setIsLoading((prevState) => ({ ...prevState, addInTail: false }));
         setIsDisabled((prevstate) => ({
           ...prevstate,
-          deleteFromHead: false,
-          deleteFromTail: false,
+          removeFromHead: false,
+          removeFromTail: false,
         }));
       }, 500);
     }, 500);
@@ -119,10 +115,10 @@ export const ListPage: React.FC = () => {
 
   const handleDeleteFromHead = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    setIsLoading((prevState) => ({ ...prevState, deleteFromHead: true }));
+    setIsLoading((prevState) => ({ ...prevState, removeFromHead: true }));
     setIsDisabled((prevstate) => ({
       ...prevstate,
-      deleteFromTail: true,
+      removeFromTail: true,
     }));
     setLetters(
       letters.map((letter, index) => {
@@ -136,26 +132,26 @@ export const ListPage: React.FC = () => {
     setBottomCircleIndex(0);
     setBottomCircleLetter(linkedList.currentHead);
     
-    linkedList.removeHead();
+    linkedList.deleteHead();
 
     setTimeout(() => {
       setLetters(linkedList.array);
       setBottomCircleIndex(-1);
       setBottomCircleLetter("");
-      setIsLoading((prevState) => ({ ...prevState, deleteFromHead: false }));
+      setIsLoading((prevState) => ({ ...prevState, removeFromHead: false }));
       setIsDisabled((prevstate) => ({
         ...prevstate,
-        deleteFromTail: false,
+        removeFromTail: false,
       }));
     }, 500);
   };
 
   const handleDeleteFromTail = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    setIsLoading((prevState) => ({ ...prevState, deleteFromTail: true }));
+    setIsLoading((prevState) => ({ ...prevState, removeFromTail: true }));
     setIsDisabled((prevstate) => ({
       ...prevstate,
-      deleteFromHead: true,
+      removeFromHead: true,
     }));
     
     setLetters(
@@ -169,16 +165,16 @@ export const ListPage: React.FC = () => {
     );
     setBottomCircleIndex(linkedList.array.length - 1);
     setBottomCircleLetter(linkedList.currentTail);
-    linkedList.removeTail();
+    linkedList.deleteTail();
 
     setTimeout(() => {
       setLetters(linkedList.array);
       setBottomCircleIndex(-1);
       setBottomCircleLetter("");
-      setIsLoading((prevState) => ({ ...prevState, deleteFromTail: false }));
+      setIsLoading((prevState) => ({ ...prevState, removeFromTail: false }));
       setIsDisabled((prevState) => ({
         ...prevState,
-        deleteFromHead: false,
+        removeFromHead: false,
       }));
     }, 500);
   };
@@ -206,7 +202,7 @@ export const ListPage: React.FC = () => {
       } else {
         clearInterval(interval);
 
-        linkedList.insertAt(value, Number(indexValue));
+        linkedList.addByIndex(value, Number(indexValue));
 
         setTimeout(() => {
           setModifiedIndexes([Number(indexValue)]);
@@ -237,7 +233,7 @@ export const ListPage: React.FC = () => {
   const handleDeleteByIndex = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     let counter: number = 0;
-    setIsLoading((prevState) => ({ ...prevState, deleteByIndex: true }));
+    setIsLoading((prevState) => ({ ...prevState, removeByIndex: true }));
     setIsDisabled({
       addToHead: true,
       addToTail: true,
@@ -263,8 +259,8 @@ export const ListPage: React.FC = () => {
           })
         );
         setBottomCircleIndex(counter);
-        setBottomCircleLetter(linkedList.getAt(Number(indexValue)));
-        linkedList.deleteAt(Number(indexValue));
+        setBottomCircleLetter(linkedList.getByIndex(Number(indexValue)));
+        linkedList.deleteByIndex(Number(indexValue));
 
         setTimeout(() => {
           setChangedIndexes([]);
@@ -311,8 +307,8 @@ export const ListPage: React.FC = () => {
                 maxLength = { 4 }
                 type = "text"
                 isLimitText =  {true }
-                value = { value }
-                onInput = { handleInput }
+                value = { value.replace(/\D/g, "") }
+                onChange = { handleInput }
               />
             </div>
             <Button
@@ -341,6 +337,7 @@ export const ListPage: React.FC = () => {
               isLoader = { isLoading.removeFromHead }
               disabled = { isDisabled.removeFromHead 
                 || (value.length !== 0 && indexValue.length === 0)
+                || (letters.length === 0)
               }
               extraClass={ styles.valueButton }
             />
@@ -350,6 +347,7 @@ export const ListPage: React.FC = () => {
               isLoader = { isLoading.removeFromTail }
               disabled = { isDisabled.removeFromTail 
                 || (value.length !== 0 && indexValue.length === 0)
+                || (letters.length === 0)
               }
               extraClass={ styles.valueButton }
             />
@@ -360,8 +358,8 @@ export const ListPage: React.FC = () => {
                 placeholder = "Введите индекс"
                 type = "number"
                 max = { letters.length - 1 }
-                onInput = { handleIndexInput }
-                value = { indexValue }
+                onChange = { handleIndexInput }
+                value = { indexValue.replace(/\D/g, "") }
               />
             </div>
             <div className = { styles.container }>

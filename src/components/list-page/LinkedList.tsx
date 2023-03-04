@@ -1,41 +1,41 @@
-export interface ILinkedList {
-  prepend: (element: string) => void;
-  append: (element: string) => void;
-  removeHead: () => string[] | null | undefined;
-  removeTail: () => string[] | null | undefined;
-  toArray: () => string[];
-  getAt: (index: number) => string;
-  insertAt: (element: string, index: number) => string[] | null | undefined;
-  deleteAt: (index: number) => string[] | null | undefined;
+export interface ILinkedList<T> {
+    prepend: (element: T) => void;
+    append: (element: T) => void;
+    addByIndex: (element: T, index: number) => void;
+    deleteByIndex: (index: number) => void;
+    deleteHead: () => void;
+    deleteTail: () => void;
+    toArray: () => T[]
+    isEmpty: () => boolean;
+    getByIndex: (index: number) => void;
 }
 
-export class Node {
-  value: string;
-  next: Node | null;
+export class LinkedListNode<T> {
+  value: T;
+  next: LinkedListNode<T> | null;
 
-  constructor(value: string, next?: Node | null) {
+  constructor(value: T, next?: LinkedListNode<T> | null) {
     this.value = value;
-    this.next = (next === undefined ? null : next);
+    this.next = next === undefined ? null : next;
   }
 }
 
-export class LinkedList<T> implements ILinkedList {
-  public items: T[] = [];
-  private head: Node | null;
+export class LinkedList<T> implements ILinkedList<T> {
+  private head: LinkedListNode<T> | null;
   private size: number;
 
-  constructor(initialArray: string[]) {
-    this.size = 0;
-    this.head = null;
-    initialArray.forEach((element) => this.prepend(element));
+  constructor(array: T[]) {
+      this.head = null;
+      this.size = 0;
+      array.forEach(item => this.prepend(item))
   }
 
-  get elements() {
-    return [...this.items];
+  get listSize(): number {
+    return this.size;
   }
 
-  get array() {
-    return this.toArray() as string[];
+  get array(): T[] {
+    return this.toArray();
   }
 
   get currentHead() {
@@ -46,99 +46,58 @@ export class LinkedList<T> implements ILinkedList {
     return this.array[this.array.length - 1];
   }
 
-  prepend = (element: string) => {
-    const node = new Node(element, this.head);
+  prepend = (element: T): void => {
+    const node = new LinkedListNode<T>(element);
+    if (!this.isEmpty()) {
+      node.next = this.head
+      this.head = node;
+    }
     this.head = node;
     this.size++;
-  };
+  }
 
-  append = (element: string) => {
-    const node = new Node(element);
-    let current;
-
+  append = (element: T): void => {
+    const node = new LinkedListNode<T>(element);
     if (this.head === null) {
       this.head = node;
-    } else {
-      current = this.head;
-
-      while (current.next) {
-        current = current.next;
+    }
+    if (!this.isEmpty()) {
+      let prev = this.head;
+      while (prev?.next) {
+        prev = prev.next;
       }
-      current.next = node;
+      prev.next = node;
     }
     this.size++;
-  };
+  }
 
-  removeHead = () => {
-    if (!this.head) {
-      return null;
-    } else {
-      this.head = this.head.next;
-    }
-  };
-
-  removeTail = () => {
-    if (!this.head) {
-      return null;
-    }
-
-    if (!this.head.next) {
-      this.head = null;
-      return;
-    }
-
-    let previous = this.head;
-    let tail = this.head.next;
-
-    while (tail.next !== null) {
-      previous = tail;
-      tail = tail.next;
-    }
-    previous.next = null;
-  };
-
-  toArray = () => {
-    let curr = this.head;
-    let array = [];
-
-    while (curr) {
-      array.push(curr?.value);
-      curr = curr?.next;
-    }
-    return array;
-  };
-
-  getAt = (index: number) => {
-    return this.array[index];
-  };
-
-  insertAt = (element: string, index: number) => {
+  addByIndex = (element: T, index: number): void => {
     if (index < 0 || index > this.size) {
-      return null;
+      return;
     } else {
-      const newNode = new Node(element);
+      const newNode = new LinkedListNode<T>(element);
       if (index === 0) {
         newNode.next = this.head;
         this.head = newNode;
       } else {
-        let current: any = this.head;
+        let current = this.head;
         let currentIndex = 0;
         let previous = null;
 
         while (currentIndex < index) {
           previous = current;
-          current = current.next;
+          current = current!.next;
           currentIndex++;
         }
         newNode.next = current;
-        previous.next = newNode;
+        previous!.next = newNode;
       }
       this.size++;
     }
-  };
+  }
 
-  deleteAt = (index: number) => {
-    if (index < 0 || index >= this.size) return null;;
+  deleteByIndex = (index: number): void => {
+    if (index < 0 || index >= this.size) return;
     let current,
       previous,
       counter = 0;
@@ -161,4 +120,42 @@ export class LinkedList<T> implements ILinkedList {
     }
     this.size--;
   }
+
+  deleteHead = (): void => {
+    if (!this.head) {
+        return;
+      }
+    this.head = this.head.next;
+    this.size--;
+  }
+
+  deleteTail = (): void => {
+    let curr = this.head;
+    let prev;
+      while (curr?.next) {
+          prev = curr;
+          curr = curr.next;
+      }
+      if (prev?.next) {
+          prev.next = null;
+      }
+    this.size--;
+  }
+
+  toArray = (): T[] => {
+    const array = [];
+    let currentNode = this.head;
+    while (currentNode) {
+        array.push(currentNode.value)
+        currentNode = currentNode.next;
+    }
+
+    return array;
+  }
+
+  isEmpty = (): boolean => this.listSize === 0;
+
+  getByIndex = (index: number) => {
+    return this.array[index];
+  };
 }

@@ -7,27 +7,26 @@ import { Button } from "../ui/button/button";
 import { Circle } from "../ui/circle/circle";
 import styles from "./queue-page.module.css";
 
-export interface IQueue {
-  item: string;
+interface IQueue {
+  letter: string;
   state: ElementStates;
-  head: string | null;
-  tail: string | null;
 }
 
 const queue = new Queue<IQueue>(7);
 
 export const QueuePage: React.FC = () => {
   const [value, setValue] = useState("");
-  const [letters, setLetters] = useState<IQueue[]>([]);
+  const [letters, setLetters] = useState(queue.items);
+  const [ind, setInd] = useState(0);
+  const [color, setColor] = useState<ElementStates>();  
   const [isLoading, setIsLoading] = useState({
     addButton: false,
     deleteButton: false,
     clearButton: false,
   });
 
-  useEffect(() => {
-    setLetters(queue.items);
-  }, []);
+  const head = queue.head;
+  const tail = queue.tail;
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,44 +37,38 @@ export const QueuePage: React.FC = () => {
     setValue(e.target.value);
   };
 
-  const handleAddValue = (e: React.MouseEvent<HTMLElement>) => {
+  const handleAddValue = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-
-    setIsLoading({ addButton: true, deleteButton: false, clearButton: false });
-    queue.removeTail();
-
-    queue.enqueue(value);
-    setLetters(queue.items);
-    setValue("");
-
+    if (!value) return;
+    setIsLoading({...isLoading, addButton: true})
+    queue.enqueue({ letter: value, state: ElementStates.Default })
+    setInd(tail);
+    setColor(ElementStates.Changing);
+    setLetters([...queue.items])
     setTimeout(() => {
-      queue.setDefault();
-      setLetters(queue.items);
-      setIsLoading({ addButton: false, deleteButton: false, clearButton: false });
-    }, 500);
+      setValue('');
+      setColor(ElementStates.Default);
+      setIsLoading({ addButton: false, deleteButton: false, clearButton: false });;
+    }, 500); 
   };
 
   const handleDelete = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     setIsLoading({ addButton: false, deleteButton: true, clearButton: false });
-
-    queue.setChanging();
-    setLetters(queue.items);
-
+    setInd(head);
+    setColor(ElementStates.Changing);
     setTimeout(() => {
       queue.dequeue();
-      setLetters(queue.items);
-      queue.setNewHead();
-      setLetters(queue.items);
+      setColor(ElementStates.Default);
+      setLetters([...queue.items]);
       setIsLoading({ addButton: false, deleteButton: false, clearButton: false });
     }, 500);
   };
 
   const hadleClearAll = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    setIsLoading({ addButton: false, deleteButton: false, clearButton: true });
     queue.clear();
-    setLetters(queue.items);
+    setLetters([...queue.items]);
     setIsLoading({ addButton: false, deleteButton: false, clearButton: false });
   };
 
@@ -85,27 +78,26 @@ export const QueuePage: React.FC = () => {
         <form className = { styles.options } onSubmit = { handleSubmit }>
           <Input
             maxLength = { 4 }
-            type = "text"
             isLimitText = { true }
             placeholder = "Введите значение"
             value = { value.replace(/\D/g, "") }
-            onInput = { handleInput }
+            onChange = { handleInput }
           />
           <Button
             text = "Добавить"
-            disabled = { !value }
+            disabled={value && tail != queue.size ? false : true || isLoading.deleteButton}
             onClick = { handleAddValue }
             isLoader = { isLoading.addButton }
           />
           <Button
             text = "Удалить"
-            disabled = { !value && queue.isEmpty }
+            disabled={head === tail ? true : false || isLoading.addButton}
             onClick = { handleDelete }
             isLoader = { isLoading.deleteButton }
           />
           <Button
             text = "Очистить"
-            disabled = { !value && queue.isEmpty }
+            disabled={queue.isEmpty() || isLoading.addButton || isLoading.deleteButton }
             onClick = { hadleClearAll }
             isLoader = { isLoading.clearButton }
           />
@@ -114,12 +106,12 @@ export const QueuePage: React.FC = () => {
           {letters.map((letter, i) => {
             return (
               <Circle
-                state = { letter?.state } 
-                letter = { letter?.item }
+                state={i === ind ? color : letter?.state}
+                letter = { letter?.letter ? letter.letter : "" }
                 key = { i }
                 index = { i }
-                head = { letter?.head }
-                tail = { letter?.tail }
+                head = { letter?.letter && i === head ? "head" : "" }
+                tail = { letter?.letter && i === tail - 1 ? "tail" : "" }
               />);
           })}
         </div>
