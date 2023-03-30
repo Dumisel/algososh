@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import  {Queue }  from "./Queue";
 import { ElementStates } from "../../types/element-states";
@@ -85,7 +85,7 @@ export const QueuePage: React.FC = () => {
           />
           <Button
             text = "Добавить"
-            disabled={value && tail != queue.size ? false : true || isLoading.deleteButton}
+            disabled={value && tail !== queue.size ? false : true || isLoading.deleteButton}
             onClick = { handleAddValue }
             isLoader = { isLoading.addButton }
           />
