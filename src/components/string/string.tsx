@@ -73,10 +73,11 @@ export const StringComponent: React.FC = () => {
      <div className = { styles.wrapper }>
         <form className = { styles.options } onSubmit = { handleSubmit }>
           <Input
+            type = "text"
             maxLength = { 11 }
             isLimitText = { true }
             onChange = { handleInput }
-            value = { value.replace(/\D/g, "") }
+            value = { value }
           />
           <Button
             text = "Развернуть"

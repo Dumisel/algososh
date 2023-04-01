@@ -104,7 +104,7 @@ export class LinkedList<T> implements ILinkedList<T> {
     current = this.head;
     previous = current;
 
-    if (index == 0) {
+    if (index === 0) {
       this.head = current ? current : null;
     } else {
       while (counter < index) {

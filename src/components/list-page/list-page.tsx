@@ -258,12 +258,17 @@ export const ListPage: React.FC = () => {
             }
           })
         );
+        if (counter === 0) {
+          setBottomCircleIndex(0);
+          setBottomCircleLetter(linkedList.currentHead);
+          linkedList.deleteHead();
+        } else {
         setBottomCircleIndex(counter);
         setBottomCircleLetter(linkedList.getByIndex(Number(indexValue)));
         linkedList.deleteByIndex(Number(indexValue));
+        }
 
         setTimeout(() => {
-          setChangedIndexes([]);
           setLetters(linkedList.array);
           setBottomCircleIndex(-1);
           setBottomCircleLetter("");

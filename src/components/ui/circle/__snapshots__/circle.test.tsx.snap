@@ -1,0 +1,1234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента без буквы 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle   default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle   default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента в состоянии changing 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle   changing"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle   changing"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента в состоянии default 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle   default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle   default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента в состоянии modified 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle   modified"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle   modified"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента с head 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head string"
+        >
+          head
+        </div>
+        <div
+          class="circle   default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head string"
+      >
+        head
+      </div>
+      <div
+        class="circle   default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента с index 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle   default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        >
+          0
+        </p>
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail60 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle   default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      >
+        0
+      </p>
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail60 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента с react-элементом в head 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        >
+          <div
+            class="content "
+          >
+            <div
+              class="text text_type_input text_color_input mb-4 absolute head element"
+            />
+            <div
+              class="circle   default"
+            >
+              <p
+                class="text text_type_circle text_color_input letter"
+              />
+            </div>
+            <p
+              class="text text_type_input text_color_input mt-4 absolute index"
+            />
+            <div
+              class="text text_type_input text_color_input mt-4 absolute tail30 element"
+            />
+          </div>
+        </div>
+        <div
+          class="circle   default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      >
+        <div
+          class="content "
+        >
+          <div
+            class="text text_type_input text_color_input mb-4 absolute head element"
+          />
+          <div
+            class="circle   default"
+          >
+            <p
+              class="text text_type_circle text_color_input letter"
+            />
+          </div>
+          <p
+            class="text text_type_input text_color_input mt-4 absolute index"
+          />
+          <div
+            class="text text_type_input text_color_input mt-4 absolute tail30 element"
+          />
+        </div>
+      </div>
+      <div
+        class="circle   default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента с react-элементом в tail 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle   default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        >
+          <div
+            class="content "
+          >
+            <div
+              class="text text_type_input text_color_input mb-4 absolute head element"
+            />
+            <div
+              class="circle   default"
+            >
+              <p
+                class="text text_type_circle text_color_input letter"
+              />
+            </div>
+            <p
+              class="text text_type_input text_color_input mt-4 absolute index"
+            />
+            <div
+              class="text text_type_input text_color_input mt-4 absolute tail30 element"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle   default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      >
+        <div
+          class="content "
+        >
+          <div
+            class="text text_type_input text_color_input mb-4 absolute head element"
+          />
+          <div
+            class="circle   default"
+          >
+            <p
+              class="text text_type_circle text_color_input letter"
+            />
+          </div>
+          <p
+            class="text text_type_input text_color_input mt-4 absolute index"
+          />
+          <div
+            class="text text_type_input text_color_input mt-4 absolute tail30 element"
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента с tail 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle   default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 string"
+        >
+          tail
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle   default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 string"
+      >
+        tail
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента с буквами 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle   default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          >
+            letter
+          </p>
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle   default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        >
+          letter
+        </p>
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Тестирование компонента Circle Корректная отрисовка элемента с пропом isSmall 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="content "
+      >
+        <div
+          class="text text_type_input text_color_input mb-4 absolute head element"
+        />
+        <div
+          class="circle  small default"
+        >
+          <p
+            class="text text_type_circle text_color_input letter"
+          />
+        </div>
+        <p
+          class="text text_type_input text_color_input mt-4 absolute index"
+        />
+        <div
+          class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="content "
+    >
+      <div
+        class="text text_type_input text_color_input mb-4 absolute head element"
+      />
+      <div
+        class="circle  small default"
+      >
+        <p
+          class="text text_type_circle text_color_input letter"
+        />
+      </div>
+      <p
+        class="text text_type_input text_color_input mt-4 absolute index"
+      />
+      <div
+        class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
